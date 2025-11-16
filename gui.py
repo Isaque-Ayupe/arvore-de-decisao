@@ -19,6 +19,7 @@ def treinar():
 #def para registrar um novo usuario
 def adicionar():
     registro = {
+        "Nome": nome.get(),
         "Idade": idade.get(),
         "Pressao": pressao.get(),
         "Colesterol": colesterol.get(),
@@ -60,13 +61,14 @@ root.title("Classificador ID3 - Demo")
 frame = ttk.Frame(root, padding=20)
 frame.pack()
 
+nome = tk.StringVar()
 idade = tk.StringVar()
 pressao = tk.StringVar()
 colesterol = tk.StringVar()
 fumante = tk.StringVar()
 risco = tk.StringVar()
 
-fields = [("Idade", idade), ("Pressão", pressao), ("Colesterol", colesterol),
+fields = [("Nome",nome), ("Idade", idade), ("Pressão", pressao), ("Colesterol", colesterol),
           ("Fumante", fumante), ("Risco", risco)]
 
 for i, (label, var) in enumerate(fields):

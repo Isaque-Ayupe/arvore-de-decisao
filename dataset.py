@@ -1,6 +1,6 @@
 import csv
 
-COLUMNS = ["Idade", "Pressao", "Colesterol", "Fumante", "Risco"]
+COLUMNS = ["Nome","Idade", "Pressao", "Colesterol", "Fumante", "Risco"]
 
 def load_csv(path="data.csv"):
     try:
