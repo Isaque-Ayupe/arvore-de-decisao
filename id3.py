@@ -1,18 +1,21 @@
 import math
 from collections import Counter
 
+#objeto dos nós
 class Node:
     def __init__(self, atributo=None, folhas=None, classe=None):
         self.atributo = atributo
         self.folhas = folhas or {}
         self.classe = classe
 
+#entropia inicial
 def entropia(dataset):
     total = len(dataset)
     classes = [d["Risco"] for d in dataset]
     cont = Counter(classes)
     return -sum((q/total)*math.log2(q/total) for q in cont.values())
 
+#função para atribuir informaçoes
 def ganho_info(dataset, atributo):
     total = len(dataset)
     valores = {}
@@ -28,10 +31,13 @@ def ganho_info(dataset, atributo):
 
     return ent_total - ent_atrib
 
+#melhor resultado entre os atributos
 def best_attribute(dataset, atributos):
     ganhos = {a: ganho_info(dataset, a) for a in atributos}
     return max(ganhos, key=ganhos.get)
 
+
+#função da arvore id3
 def id3(dataset, atributos):
     classes = [d["Risco"] for d in dataset]
     if len(set(classes)) == 1:
@@ -50,6 +56,7 @@ def id3(dataset, atributos):
         node.folhas[v] = id3(subset, novos)
     return node
 
+#função de previsao (bizarro)
 def predict(tree, exemplo):
     if tree.classe:
         return tree.classe

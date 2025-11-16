@@ -1,8 +1,5 @@
-Idade,Pressao,Colesterol,Fumante,Risco
-Jovem,Alta,Alto,Sim,Alto Risco
-Adulto,Normal,Normal,Nao,Baixo Risco
-Idoso,Alta,Alto,Nao,Medio Risco
-Adulto,Alta,Normal,Sim,Alto Risco
-,,,,
-Jovem,alta,baixo,nao,medio risco
-Jovem,media,alto,sim,baixo
+Nome,Idade,Pressao,Colesterol,Fumante,Risco
+Isaque,jovem,alta,alto,sim,alto
+Rebeca,jovem,baixa,alto,nao,baixo
+Daniela,Velho,baixa,alto,nao,baixo
+Ewerton,Velho,alta,baixo,nao,alto

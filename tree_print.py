@@ -1,9 +1,16 @@
 def print_tree(node, nivel=0):
     prefix = "  " * nivel
-    if node.classe:
-        print(f"{prefix}→ {node.classe}")
+
+    # Nó folha
+    if node.classe is not None:
+        print(f"{prefix}→ Classe: {node.classe}")
         return
-    print(f"{prefix}[Atributo: {node.atributo}]")
+
+    # Nó interno (atributo)
+    atributo = node.atributo if node.atributo is not None else "Atributo-desconhecido"
+    print(f"{prefix}[Atributo: {atributo}]")
+
+    # Filhos
     for valor, filho in node.folhas.items():
-        print(f"{prefix}  └── {valor}:")
-        print_tree(filho, nivel+2)
+        print(f"{prefix}  └── Nome: {valor}")
+        print_tree(filho, nivel + 2)
